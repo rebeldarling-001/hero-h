@@ -1,18 +1,34 @@
 let intro = document.getElementById("intro-screen");
 let home = document.getElementById("main-home");
 
-setTimeout(() => {
+// Splash screen (only on home page)
+if (intro && home) {
 
-    intro.style.opacity = "0";
+    if (!sessionStorage.getItem("splashShown")) {
 
-    setTimeout(() => {
+        sessionStorage.setItem("splashShown", "true");
+
+        setTimeout(() => {
+
+            intro.style.opacity = "0";
+
+            setTimeout(() => {
+
+                intro.style.display = "none";
+                home.style.display = "block";
+
+            }, 1000);
+
+        }, 3000);
+
+    } else {
 
         intro.style.display = "none";
         home.style.display = "block";
 
-    }, 1000);
+    }
 
-}, 3000);
+}
 
 function toggleMenu(){
 
@@ -54,20 +70,20 @@ let currentSlide = 0;
 
 setInterval(() => {
 
-```
-currentSlide++;
+    currentSlide++;
 
-if(currentSlide >= spotlightData.length){
-    currentSlide = 0;
-}
+    if(currentSlide >= spotlightData.length){
+        currentSlide = 0;
+    }
 
-const item = spotlightData[currentSlide];
+    const item = spotlightData[currentSlide];
 
-document.getElementById("spotlightImage").src = item.image;
-document.getElementById("spotlightTag").textContent = item.tag;
-document.getElementById("spotlightTitle").textContent = item.title;
-document.getElementById("spotlightText").textContent = item.text;
-document.getElementById("spotlightBanner").href = item.link;
-```
+    if(document.getElementById("spotlightImage")){
+        document.getElementById("spotlightImage").src = item.image;
+        document.getElementById("spotlightTag").textContent = item.tag;
+        document.getElementById("spotlightTitle").textContent = item.title;
+        document.getElementById("spotlightText").textContent = item.text;
+        document.getElementById("spotlightBanner").href = item.link;
+    }
 
 }, 5000);
