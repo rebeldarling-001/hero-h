@@ -624,3 +624,15 @@ img{
     margin:30px 0 20px;
     text-shadow:0 0 10px #ff7b00;
 }
+
+body,
+p,
+div,
+span,
+a,
+.footer-description,
+.about-freefirexipl p,
+.spotlight-subtitle,
+.ticker-text{
+    font-family: monospace !important;
+}
