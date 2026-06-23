@@ -114,11 +114,24 @@ h1{
 }
 
 .brand{
-    color:#ff7b00;
-    font-size:18px;
-    font-weight:700;
-    letter-spacing:1px;
     font-family:'Orbitron',sans-serif;
+    font-size:36px;
+    font-weight:900;
+    letter-spacing:5px;
+    color:#fff;
+    position:relative;
+    text-shadow:0 0 15px #ff7b00;
+}
+
+.brand::after{
+    content:"";
+    position:absolute;
+    left:0;
+    bottom:-5px;
+    width:100%;
+    height:3px;
+    background:linear-gradient(90deg,#ff7b00,#ffd700,#ff7b00);
+    border-radius:10px;
 }
 
 .hex-menu{
@@ -132,8 +145,8 @@ h1{
 .fame-container{
     display:grid;
     grid-template-columns:repeat(2,1fr);
-    gap:12px;
-    margin-top:20px;
+    gap:10px;
+    margin-top:10px;
 }
 
 .fame-card{
@@ -142,6 +155,28 @@ h1{
     overflow:hidden;
     cursor:pointer;
     transition:0.3s;
+}
+.fame-container{
+    display:grid;
+    grid-template-rows:repeat(2,120px);
+    grid-auto-flow:column;
+    grid-auto-columns:120px;
+    gap:10px;
+
+    overflow-x:auto;
+    overflow-y:hidden;
+
+    padding:10px;
+}
+
+.fame-card{
+    width:120px;
+    height:120px;
+    border-radius:15px;
+    overflow:hidden;
+    border:2px solid #ff7b00;
+    background:#111;
+    position:relative;
 }
 
 .fame-card:hover{
@@ -209,7 +244,7 @@ h1{
 
 .fame-card{
     position:relative;
-    height:220px;
+    height:100px;
     border-radius:18px;
     overflow:hidden;
     border:2px solid #ff7b00;
@@ -230,16 +265,15 @@ h1{
 
 .season-tag{
     position:absolute;
-    top:10px;
-    left:10px;
+    top:5px;
+    left:5px;
     background:rgba(0,0,0,0.8);
     color:#ff7b00;
-    padding:8px 14px;
-    border-radius:8px;
-    font-family:'Orbitron',sans-serif;
-    font-size:14px;
-    border:1px solid #ff7b00;
+    padding:3px 6px;
+    border-radius:5px;
+    font-size:10px;
 }
+
 /* SPOTLIGHT SECTION */
 
 .spotlight{
