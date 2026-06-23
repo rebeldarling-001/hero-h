@@ -44,7 +44,7 @@ function toggleMenu(){
 
 const spotlightData = [
 {
-image:"images/banner1.jpg",
+image:"images/mi.jpg",
 tag:"COMING SOON",
 title:"FREEFIREXIPL SEASON 11",
 date:"Registration Opens Soon",
