@@ -110,9 +110,10 @@ h1{
 
 .brand{
     color:#ff7b00;
-    font-size:12px;
+    font-size:18px;
+    font-weight:700;
+    letter-spacing:1px;
     font-family:'Orbitron',sans-serif;
-    text-shadow:0 0 10px #ff7b00;
 }
 
 .hex-menu{
@@ -231,8 +232,9 @@ h1{
     padding:8px 14px;
     border-radius:8px;
     font-family:'Orbitron',sans-serif;
-    font-size:14px;
+    font-size:12px;
     border:1px solid #ff7b00;
+    font-weight:bold;
 }
 /* SPOTLIGHT SECTION */
 .spotlight{
@@ -240,11 +242,10 @@ h1{
 }
 
 .spotlight-title{
-    text-align:center;
-    font-family:'Orbitron',sans-serif;
-    color:#fff;
-    font-size:20px;
-    margin-bottom:8px;
+    font-size:22px;
+    font-weight:700;
+    text-transform:uppercase;
+    letter-spacing:1px;
 }
 
 .spotlight-subtitle{
@@ -366,7 +367,9 @@ max-width:1000px;
 margin:auto;
 color:#ddd;
 line-height:1.8;
+font-size:15px;
 }
+
 
 .ffx-footer{
 margin-top:40px;
@@ -613,4 +616,12 @@ img{
     max-width:100%;
     height:auto;
     display:block;
+}
+.hall-heading{
+    text-align:center;
+    font-family:'Orbitron',sans-serif;
+    color:#ff7b00;
+    font-size:24px;
+    margin:30px 0 20px;
+    text-shadow:0 0 10px #ff7b00;
 }
