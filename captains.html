@@ -13,408 +13,170 @@
 <style>
 
 *{
-margin:0;
-padding:0;
-box-sizing:border-box;
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
 }
-
 
 body{
-
-background:#030303;
-
-color:white;
-
-font-family:Arial,sans-serif;
-
-padding:20px;
-
+    background:
+    radial-gradient(circle at top,#ff7b0030,transparent 35%),
+    radial-gradient(circle at bottom,#ff7b0030,transparent 35%),
+    #030303;
+    color:white;
+    font-family:Arial,sans-serif;
+    padding:15px;
 }
 
-
-
+/* Back Button */
 .back-btn{
-
-color:#ff7b00;
-
-text-decoration:none;
-
-font-weight:bold;
-
-font-family:'Poppins';
-
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    color:white;
+    text-decoration:none;
+    font-weight:700;
+    font-family:'Poppins';
+    font-size:15px;
+    padding:8px 14px;
+    border:2px solid #ff7b00;
+    border-radius:10px;
+    background:rgba(255,123,0,.08);
+    box-shadow:0 0 12px rgba(255,123,0,.4);
 }
 
-
-
+/* Heading */
 .captains-heading{
-
-text-align:center;
-
-font-family:'Orbitron';
-
-font-size:28px;
-
-color:#ff7b00;
-
-margin:25px;
-
-text-shadow:0 0 20px #ff7b00;
-
+    text-align:center;
+    font-family:'Audiowide', sans-serif;
+    font-size:22px;
+    font-weight:400;
+    margin:20px 0;
+    color:white;
+    letter-spacing:2px;
+    text-transform:uppercase;
+    text-shadow:
+        0 0 6px #ff7b00,
+        0 0 12px #ff7b00;
 }
 
-
-
+/* List */
 .captains-list{
-
-display:flex;
-
-flex-direction:column;
-
-gap:14px;
-
+    display:flex;
+    flex-direction:column;
+    gap:16px;
 }
 
-
-
+/* Cards */
 .captain-item{
-
-
-height:90px;
-
-
-display:flex;
-
-align-items:center;
-
-
-gap:20px;
-
-
-padding:12px 20px;
-
-
-position:relative;
-
-
-overflow:hidden;
-
-
-border-radius:18px;
-
-
-background:#080808;
-
-
-border:2px solid var(--team);
-
-
-box-shadow:
-
-0 0 18px var(--team);
-
-
-
+    height:85px;
+    display:flex;
+    align-items:center;
+    gap:15px;
+    padding:10px 14px;
+    position:relative;
+    overflow:hidden;
+    border-radius:18px;
+    background:linear-gradient(135deg,#111,#050505);
+    border:2px solid var(--team);
+    box-shadow:
+        0 0 15px var(--team),
+        inset 0 0 8px rgba(255,255,255,.05);
+    transition:.3s ease;
 }
 
-
-
-/* background diagonal lines */
-
+/* Background stripes */
 .captain-item::before{
-
-
-content:"";
-
-
-position:absolute;
-
-
-inset:0;
-
-
-background:
-
-repeating-linear-gradient(
-
-120deg,
-
-transparent 0px,
-
-transparent 35px,
-
-rgba(255,255,255,.08) 36px,
-
-transparent 42px
-
-);
-
-
-
+    content:"";
+    position:absolute;
+    inset:0;
+    background:
+    repeating-linear-gradient(
+        120deg,
+        transparent 0px,
+        transparent 35px,
+        rgba(255,255,255,.06) 36px,
+        transparent 42px
+    );
 }
 
-
-
-
-
-/* bright moving streak */
-
-
+/* Glow streak */
 .captain-item::after{
-
-
-content:"";
-
-
-position:absolute;
-
-
-width:450px;
-
-
-height:120px;
-
-
-left:35%;
-
-
-top:-20px;
-
-
-background:
-
-linear-gradient(
-
-90deg,
-
-transparent,
-
-var(--team),
-
-transparent
-
-);
-
-
-
-transform:rotate(-25deg);
-
-
-opacity:.35;
-
-
-
+    content:"";
+    position:absolute;
+    width:250px;
+    height:90px;
+    left:40%;
+    top:-20px;
+    background:
+    linear-gradient(
+        90deg,
+        transparent,
+        var(--team),
+        transparent
+    );
+    transform:rotate(-25deg);
+    opacity:.25;
 }
 
-
-/* arrows right */
-
-
-.captain-item span{
-
-
-position:absolute;
-
-
-right:30px;
-
-
-font-size:50px;
-
-
-color:var(--team);
-
-opacity:.7;
-
-
+/* Hover */
+.captain-item:hover{
+    transform:translateY(-3px);
+    box-shadow:
+        0 0 20px var(--team),
+        0 0 40px var(--team);
 }
 
-
-
-
+/* Team image */
 .captain-item img{
-
-
-width:65px;
-
-height:65px;
-
-
-border-radius:50%;
-
-
-border:3px solid white;
-
-
-z-index:3;
-
-
-box-shadow:
-
-0 0 20px var(--team);
-
-
-
+    width:55px;
+    height:55px;
+    border-radius:50%;
+    border:3px solid white;
+    z-index:3;
+    box-shadow:0 0 15px var(--team);
 }
 
-
-
+/* Text */
 .captain-item div{
-
-z-index:3;
-
+    z-index:3;
 }
-
-
-
 
 .team-name{
-
-
-font-size:22px;
-
-
-font-family:'Orbitron';
-
-
-font-weight:900;
-
-
-color:white;
-
-
-text-shadow:
-
-0 0 10px var(--team);
-
-
-
+    font-size:18px;
+    font-family:'Orbitron';
+    font-weight:900;
+    letter-spacing:2px;
+    color:white;
+    text-shadow:0 0 12px var(--team);
 }
-
-
 
 .captain-name{
-
-font-size:14px;
-
-color:white;
-
+    font-size:12px;
+    color:#ddd;
 }
 
-
-
-
-
-.srh{
-
---team:#ff7a00;
-
+/* Arrow */
+.captain-item span{
+    position:absolute;
+    right:15px;
+    font-size:28px;
+    color:white;
+    opacity:.9;
+    text-shadow:0 0 12px var(--team);
 }
 
-
-.rcb{
-
---team:#ff0000;
-
-}
-
-
-.csk{
-
---team:#ffd600;
-
-}
-
-
-.mi{
-
---team:#0066ff;
-
-}
-
-
-.kkr{
-
---team:#a020f0;
-
-}
-
-
-.rr{
-
---team:#ff1493;
-
-}
-
-
-.dc{
-
---team:#008cff;
-
-}
-
-
-.pbks{
-
---team:#ff0000;
-
-}
-
-
-.lsg{
-
---team:#00ff55;
-
-}
-
-
-.gt{
-
---team:#00ffff;
-
-}
-
-.captain-item{
-
-    transition:0.3s ease;
-
-}
-
-
-/* click glow effect */
-
-.captain-item:active{
-
-    transform:scale(0.98);
-
-    box-shadow:
-
-    0 0 35px var(--team),
-    0 0 70px var(--team);
-
-}
-
-
-/* image glow on click */
-
-.captain-item:active img{
-
-    box-shadow:
-
-    0 0 30px var(--team);
-
-}
-
-
-/* text glow on click */
-
-.captain-item:active .team-name{
-
-    text-shadow:
-
-    0 0 20px var(--team);
-
-}
+/* Team Colors */
+.srh{ --team:#ff7a00; }
+.rcb{ --team:#ff0000; }
+.csk{ --team:#ffd600; }
+.mi{ --team:#0066ff; }
+.kkr{ --team:#a020f0; }
+.rr{ --team:#ff1493; }
+.dc{ --team:#008cff; }
+.pbks{ --team:#ff0000; }
+.lsg{ --team:#00ff55; }
+.gt{ --team:#00ffff; }
 
 </style>
 </head>
