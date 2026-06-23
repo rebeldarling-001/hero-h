@@ -632,3 +632,19 @@ img{
     margin:30px 0 20px;
     text-shadow:0 0 15px #ff7b00;
 }
+.footer-description{
+    font-family: Arial, sans-serif !important;
+    font-size: 16px;
+    line-height: 1.8;
+    color: #ddd;
+}
+
+.about-freefirexipl p{
+    font-family: Arial, sans-serif !important;
+    font-size: 16px;
+    line-height: 1.8;
+}
+
+.spotlight-subtitle{
+    font-family: Arial, sans-serif !important;
+}
