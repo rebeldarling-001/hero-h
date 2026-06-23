@@ -21,7 +21,7 @@ body{
 body{
     background:#050505;
     color:white;
-    font-family: 'Poppins', sans-serif !important;
+    font-family:'Segoe UI',sans-serif;
 }
 /* INTRO */
 
@@ -457,7 +457,7 @@ color:#777;
 body{
     background:#050505;
     color:white;
-    font-family:'Poppins', sans-serif !important;
+    font-family:Arial,sans-serif;
     padding:20px;
 }
 
@@ -647,12 +647,4 @@ img{
 
 .spotlight-subtitle{
     font-family: Arial, sans-serif !important;
-}
-.footer-description,
-.about-freefirexipl p,
-.spotlight-subtitle,
-.ticker-text{
-    font-family: sans-serif !important;
-    font-style: normal !important;
-    font-weight: 400 !important;
 }
