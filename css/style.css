@@ -656,14 +656,3 @@ img{
     font-style: normal !important;
     font-weight: 400 !important;
 }
-*{
-   -webkit-font-smoothing: antialiased;
-   text-rendering: optimizeLegibility;
-}
-
-body, p, div, span, a {
-   font-family: inherit !important;
-}
-*{
-   font-family: Arial, sans-serif !important;
-}
