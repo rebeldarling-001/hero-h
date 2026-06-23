@@ -99,3 +99,23 @@ function prevSlide(){
 }
 
 setInterval(nextSlide, 4000);
+
+let startX = 0;
+
+const card = document.querySelector('.spotlight-card');
+
+card.addEventListener('touchstart', (e) => {
+    startX = e.touches[0].clientX;
+});
+
+card.addEventListener('touchend', (e) => {
+    let endX = e.changedTouches[0].clientX;
+
+    if(startX - endX > 50){
+        nextSlide(); // swipe left
+    }
+
+    if(endX - startX > 50){
+        prevSlide(); // swipe right
+    }
+});

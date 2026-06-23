@@ -282,7 +282,7 @@ h1{
 }
 
 .spotlight-title{
-    font-size:22px;
+    font-size:14px;
     font-weight:800;
     text-transform:uppercase;
     letter-spacing:2px;
@@ -302,7 +302,7 @@ h1{
 
 .spotlight-card{
     display:flex;
-    height:350px;
+    height:380px;
     width:98%;
     margin:0 auto;
     border:2px solid #ff7b00;
@@ -313,10 +313,9 @@ h1{
 }
 
 .spotlight-image{
-    width:34%;
-    min-height:140px;
+    width:35%;
+    height:100%;
 }
-
 .spotlight-image img{
     width:100%;
     height:100%;
@@ -324,10 +323,9 @@ h1{
     display:block;
 }
 
-.spotlight-info p{
-    color:#ccc;
-    font-size:14px;
-    line-height:1.8;
+.spotlight-info{
+    width:65%;
+    padding:15px;
 }
 
 .spotlight-badge{
@@ -341,8 +339,8 @@ h1{
 }
 
 .spotlight-info h2{
-    font-size:15px;
-    margin-bottom:6px;
+    font-size:24px;
+    margin-bottom:10px;
     font-family:'Orbitron',sans-serif;
 }
 
@@ -354,8 +352,8 @@ h1{
 
 .spotlight-info p{
     color:#ccc;
-    font-size:10px;
-    line-height:1.4;
+    font-size:14px;
+    line-height:1.8;
 }
 
 .spotlight-tags{
@@ -374,15 +372,16 @@ h1{
 
 .spotlight-btn{
     display:block;
-    margin-top:10px;
+    width:100%;
     text-align:center;
     background:#ff7b00;
     color:black;
     text-decoration:none;
-    padding:6px;
-    border-radius:6px;
+    padding:12px;
+    border-radius:8px;
     font-weight:bold;
-    font-size:12px;
+    font-size:16px;
+    margin-top:15px;
 }
 
 .slider-controls{
@@ -391,16 +390,19 @@ h1{
     gap:10px;
 }
 
+.slider-controls{
+    display:flex;
+    justify-content:center;
+    gap:15px;
+    margin-top:15px;
+}
+
 .slider-controls button{
-    position:absolute;
-    top:50%;
-    transform:translateY(-50%);
+    position:static;
     background:#ff7b00;
     border:none;
-    padding:12px 15px;
-    cursor:pointer;
+    padding:10px 15px;
     border-radius:8px;
-    font-weight:bold;
 }
 
 .slider-controls button:first-child{
@@ -414,30 +416,32 @@ h1{
 @media(max-width:768px){
 
     .spotlight-card{
+        display:flex;
         flex-direction:column;
-        min-height:400px;
+        height:auto;
+        border:2px solid #ff7b00;
+        border-radius:12px;
+        overflow:hidden;
     }
 
     .spotlight-image{
         width:100%;
-        height:400px;   /* Half card for image */
+        height:180px;
     }
 
     .spotlight-image img{
         width:100%;
-        height:120%;
+        height:100%;
         object-fit:cover;
     }
 
     .spotlight-info{
-        width:100%;
-        padding:20px;
-        text-align:center;
-    }
+    text-align:left;
+}
 
     .spotlight-info h2{
-        font-size:18px;
-        margin-bottom:15px;
+        font-size:20px;
+        margin-bottom:10px;
     }
 
     .spotlight-date{
@@ -446,12 +450,76 @@ h1{
     }
 
     .spotlight-info p{
-        font-size:18px;
-        line-height:1;
-        margin-bottom:10px;
+        font-size:14px;
+        line-height:1.6;
     }
 }
 
+.swipe-guide{
+    text-align:center;
+    color:#ff7b00;
+    font-size:14px;
+    font-weight:bold;
+    margin-top:10px;
+    animation:fadeOut 2s forwards;
+    animation-delay:1s;
+}
+
+@keyframes fadeOut{
+    from{
+        opacity:1;
+    }
+    to{
+        opacity:0;
+        visibility:hidden;
+    }
+}
+
+.swipe-hint{
+    position:absolute;
+    inset:0;
+    pointer-events:none;
+    animation:hideHint 2s forwards;
+}
+
+.left-arrow,
+.right-arrow{
+    position:absolute;
+    top:50%;
+    transform:translateY(-50%);
+    font-size:28px;
+    color:#fff;
+    opacity:0;
+}
+
+.left-arrow{
+    left:12px;
+    animation:leftSwipe 2s ease-in-out 2;
+}
+
+.right-arrow{
+    right:12px;
+    animation:rightSwipe 2s ease-in-out 2;
+}
+
+@keyframes leftSwipe{
+    0%{opacity:0;transform:translateY(-50%) translateX(0);}
+    50%{opacity:.8;transform:translateY(-50%) translateX(-10px);}
+    100%{opacity:0;transform:translateY(-50%) translateX(0);}
+}
+
+@keyframes rightSwipe{
+    0%{opacity:0;transform:translateY(-50%) translateX(0);}
+    50%{opacity:.8;transform:translateY(-50%) translateX(10px);}
+    100%{opacity:0;transform:translateY(-50%) translateX(0);}
+}
+
+@keyframes hideHint{
+    to{
+        opacity:0;
+        visibility:hidden;
+    }
+}
 .about-freefirexipl{
 padding:20px 0;
 text-align:center;
