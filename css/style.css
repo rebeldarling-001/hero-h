@@ -21,8 +21,9 @@ body{
 body{
     background:#050505;
     color:white;
-    font-family:'Segoe UI',sans-serif;
+    font-family:Arial,sans-serif;
 }
+
 /* INTRO */
 
 #intro-screen{
@@ -109,11 +110,10 @@ h1{
 
 .brand{
     color:#ff7b00;
-    font-size:20px;
-    font-weight:900;
-    letter-spacing:2px;
+    font-size:18px;
+    font-weight:700;
+    letter-spacing:1px;
     font-family:'Orbitron',sans-serif;
-    text-shadow:0 0 15px #ff7b00;
 }
 
 .hex-menu{
@@ -232,9 +232,8 @@ h1{
     padding:8px 14px;
     border-radius:8px;
     font-family:'Orbitron',sans-serif;
-    font-size:12px;
+    font-size:14px;
     border:1px solid #ff7b00;
-    font-weight:bold;
 }
 /* SPOTLIGHT SECTION */
 .spotlight{
@@ -242,13 +241,10 @@ h1{
 }
 
 .spotlight-title{
-    text-align:center;
-    color:#fff;
-    font-family:'Orbitron',sans-serif;
-    font-size:24px;
-    font-weight:900;
-    letter-spacing:2px;
-    margin-bottom:10px;
+    font-size:22px;
+    font-weight:700;
+    text-transform:uppercase;
+    letter-spacing:1px;
 }
 
 .spotlight-subtitle{
@@ -366,11 +362,11 @@ margin-bottom:25px;
 }
 
 .about-freefirexipl p{
-    max-width:1000px;
-    margin:auto;
-    color:#cfcfcf;
-    line-height:1.9;
-    font-size:16px;
+max-width:1000px;
+margin:auto;
+color:#ddd;
+line-height:1.8;
+font-size:15px;
 }
 
 
@@ -382,12 +378,10 @@ border-top:1px solid #333;
 }
 
 .footer-logo{
-    color:#ff7b00;
-    font-size:28px;
-    font-weight:900;
-    letter-spacing:2px;
-    font-family:'Orbitron',sans-serif;
-    text-shadow:0 0 12px #ff7b00;
+color:#ff7b00;
+font-size:22px;
+font-family:'Orbitron',sans-serif;
+margin-bottom:25px;
 }
 
 .footer-links{
@@ -626,25 +620,7 @@ img{
     text-align:center;
     font-family:'Orbitron',sans-serif;
     color:#ff7b00;
-    font-size:28px;
-    font-weight:900;
-    letter-spacing:3px;
+    font-size:24px;
     margin:30px 0 20px;
-    text-shadow:0 0 15px #ff7b00;
-}
-.footer-description{
-    font-family: Arial, sans-serif !important;
-    font-size: 16px;
-    line-height: 1.8;
-    color: #ddd;
-}
-
-.about-freefirexipl p{
-    font-family: Arial, sans-serif !important;
-    font-size: 16px;
-    line-height: 1.8;
-}
-
-.spotlight-subtitle{
-    font-family: Arial, sans-serif !important;
+    text-shadow:0 0 10px #ff7b00;
 }
