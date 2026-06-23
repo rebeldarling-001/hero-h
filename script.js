@@ -47,43 +47,55 @@ const spotlightData = [
 image:"images/banner1.jpg",
 tag:"COMING SOON",
 title:"FREEFIREXIPL SEASON 11",
-text:"Registration Opening Soon",
+date:"Registration Opens Soon",
+text:"Bigger battles, stronger teams, exciting matches.",
 link:"#"
 },
 {
 image:"images/banner2.jpg",
 tag:"UPDATE",
 title:"TOURNAMENT SCHEDULE",
-text:"Will Be Released Shortly",
+date:"Coming This Week",
+text:"Official match schedule releasing shortly.",
 link:"#"
 },
 {
 image:"images/banner3.jpg",
 tag:"SPECIAL EVENT",
+date:"Limited Event",
 title:"EXCLUSIVE REWARDS",
-text:"Exciting Rewards Await Players",
+text:"Play and win exclusive tournament rewards.",
 link:"#"
 }
 ];
 
 let currentSlide = 0;
 
-setInterval(() => {
+function showSlide(){
+    const item = spotlightData[currentSlide];
 
+    document.getElementById("spotlightImage").src = item.image;
+    document.getElementById("spotlightTag").textContent = item.tag;
+    document.getElementById("spotlightTitle").textContent = item.title;
+    document.getElementById("spotlightDate").textContent = item.date;
+    document.getElementById("spotlightText").textContent = item.text;
+    document.getElementById("spotlightBanner").href = item.link;
+}
+
+function nextSlide(){
     currentSlide++;
-
     if(currentSlide >= spotlightData.length){
         currentSlide = 0;
     }
+    showSlide();
+}
 
-    const item = spotlightData[currentSlide];
-
-    if(document.getElementById("spotlightImage")){
-        document.getElementById("spotlightImage").src = item.image;
-        document.getElementById("spotlightTag").textContent = item.tag;
-        document.getElementById("spotlightTitle").textContent = item.title;
-        document.getElementById("spotlightText").textContent = item.text;
-        document.getElementById("spotlightBanner").href = item.link;
+function prevSlide(){
+    currentSlide--;
+    if(currentSlide < 0){
+        currentSlide = spotlightData.length - 1;
     }
+    showSlide();
+}
 
-}, 5000);
+setInterval(nextSlide, 4000);
