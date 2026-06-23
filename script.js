@@ -15,7 +15,7 @@ if (intro && home) {
             setTimeout(() => {
 
                 intro.style.display = "none";
-                home.style.display = "block";
+home.classList.add("show-home");
 
             }, 1000);
 
@@ -23,8 +23,8 @@ if (intro && home) {
 
     } else {
 
-        intro.style.display = "none";
-        home.style.display = "block";
+       intro.style.display = "none";
+home.classList.add("show-home");
 
     }
 

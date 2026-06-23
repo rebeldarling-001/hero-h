@@ -83,10 +83,17 @@ h1{
 /* HOME */
 
 #main-home{
-    display:none;
+    opacity:0;
+    visibility:hidden;
     min-height:100vh;
     background:#050505;
     padding:20px;
+    transition:opacity 0.8s ease;
+}
+
+.show-home{
+    opacity:1 !important;
+    visibility:visible !important;
 }
 
 /* HEADER */
