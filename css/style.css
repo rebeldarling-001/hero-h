@@ -93,7 +93,8 @@ h1{
 #main-home{
     min-height:100vh;
     background:#050505;
-    padding:10px;
+    width:100%;
+    padding:5px;
 }
 
 
@@ -237,7 +238,8 @@ h1{
 }
 /* SPOTLIGHT SECTION */
 .spotlight{
-    margin:25px 0;
+    margin:10px 0;
+    width:100%;
 }
 
 .spotlight-title{
@@ -452,7 +454,7 @@ body{
     background:#050505;
     color:white;
     font-family: system-ui, sans-serif;
-    padding:20px;
+    padding:0;
 }
 
 .back-btn{
