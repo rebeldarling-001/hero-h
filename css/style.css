@@ -648,3 +648,11 @@ img{
 .spotlight-subtitle{
     font-family: Arial, sans-serif !important;
 }
+.footer-description,
+.about-freefirexipl p,
+.spotlight-subtitle,
+.ticker-text{
+    font-family: sans-serif !important;
+    font-style: normal !important;
+    font-weight: 400 !important;
+}
