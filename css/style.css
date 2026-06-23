@@ -92,8 +92,20 @@ h1{
 }
 
 .show-home{
-    opacity:1 !important;
-    visibility:visible !important;
+    opacity:1;
+    visibility:visible;
+    animation:homeFade 0.8s ease;
+}
+
+@keyframes homeFade{
+    from{
+        opacity:0;
+        transform:translateY(20px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
 }
 
 /* HEADER */
