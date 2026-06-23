@@ -11,82 +11,411 @@
 
 <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Poppins:wght@400;500&display=swap" rel="stylesheet">
 <style>
+
 *{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
+margin:0;
+padding:0;
+box-sizing:border-box;
 }
+
 
 body{
-    background:#050505;
-    color:white;
-    font-family:Arial,sans-serif;
-    padding:20;
+
+background:#030303;
+
+color:white;
+
+font-family:Arial,sans-serif;
+
+padding:20px;
+
 }
+
+
 
 .back-btn{
-    display:inline-block;
-    margin-bottom:20px;
-    color:#ff7b00;
-    text-decoration:none;
-    font-weight:bold;
-    font-family:'Poppins', sans-serif;
+
+color:#ff7b00;
+
+text-decoration:none;
+
+font-weight:bold;
+
+font-family:'Poppins';
+
 }
+
+
 
 .captains-heading{
-    text-align:center;
-    color:#ff7b00;
-    font-family:'Orbitron', sans-serif;
-    margin-bottom:25px;
-    font-size:28px;
+
+text-align:center;
+
+font-family:'Orbitron';
+
+font-size:28px;
+
+color:#ff7b00;
+
+margin:25px;
+
+text-shadow:0 0 20px #ff7b00;
+
 }
 
+
+
 .captains-list{
-    display:flex;
-    flex-direction:column;
-    gap:12px;
+
+display:flex;
+
+flex-direction:column;
+
+gap:14px;
+
+}
+
+
+
+.captain-item{
+
+
+height:90px;
+
+
+display:flex;
+
+align-items:center;
+
+
+gap:20px;
+
+
+padding:12px 20px;
+
+
+position:relative;
+
+
+overflow:hidden;
+
+
+border-radius:18px;
+
+
+background:#080808;
+
+
+border:2px solid var(--team);
+
+
+box-shadow:
+
+0 0 18px var(--team);
+
+
+
+}
+
+
+
+/* background diagonal lines */
+
+.captain-item::before{
+
+
+content:"";
+
+
+position:absolute;
+
+
+inset:0;
+
+
+background:
+
+repeating-linear-gradient(
+
+120deg,
+
+transparent 0px,
+
+transparent 35px,
+
+rgba(255,255,255,.08) 36px,
+
+transparent 42px
+
+);
+
+
+
+}
+
+
+
+
+
+/* bright moving streak */
+
+
+.captain-item::after{
+
+
+content:"";
+
+
+position:absolute;
+
+
+width:450px;
+
+
+height:120px;
+
+
+left:35%;
+
+
+top:-20px;
+
+
+background:
+
+linear-gradient(
+
+90deg,
+
+transparent,
+
+var(--team),
+
+transparent
+
+);
+
+
+
+transform:rotate(-25deg);
+
+
+opacity:.35;
+
+
+
+}
+
+
+/* arrows right */
+
+
+.captain-item span{
+
+
+position:absolute;
+
+
+right:30px;
+
+
+font-size:50px;
+
+
+color:var(--team);
+
+opacity:.7;
+
+
+}
+
+
+
+
+.captain-item img{
+
+
+width:65px;
+
+height:65px;
+
+
+border-radius:50%;
+
+
+border:3px solid white;
+
+
+z-index:3;
+
+
+box-shadow:
+
+0 0 20px var(--team);
+
+
+
+}
+
+
+
+.captain-item div{
+
+z-index:3;
+
+}
+
+
+
+
+.team-name{
+
+
+font-size:22px;
+
+
+font-family:'Orbitron';
+
+
+font-weight:900;
+
+
+color:white;
+
+
+text-shadow:
+
+0 0 10px var(--team);
+
+
+
+}
+
+
+
+.captain-name{
+
+font-size:14px;
+
+color:white;
+
+}
+
+
+
+
+
+.srh{
+
+--team:#ff7a00;
+
+}
+
+
+.rcb{
+
+--team:#ff0000;
+
+}
+
+
+.csk{
+
+--team:#ffd600;
+
+}
+
+
+.mi{
+
+--team:#0066ff;
+
+}
+
+
+.kkr{
+
+--team:#a020f0;
+
+}
+
+
+.rr{
+
+--team:#ff1493;
+
+}
+
+
+.dc{
+
+--team:#008cff;
+
+}
+
+
+.pbks{
+
+--team:#ff0000;
+
+}
+
+
+.lsg{
+
+--team:#00ff55;
+
+}
+
+
+.gt{
+
+--team:#00ffff;
+
 }
 
 .captain-item{
-    display:flex;
-    align-items:center;
-    gap:15px;
-    padding:12px;
-    border-radius:15px;
-    border:1px solid #ff7b00;
+
+    transition:0.3s ease;
+
 }
 
-.captain-item img{
-    width:60px;
-    height:60px;
-    border-radius:50%;
-    object-fit:cover;
-    border:2px solid white;
+
+/* click glow effect */
+
+.captain-item:active{
+
+    transform:scale(0.98);
+
+    box-shadow:
+
+    0 0 35px var(--team),
+    0 0 70px var(--team);
+
 }
 
-.team-name{
-    font-size:18px;
-    font-weight:bold;
-    font-family:'Poppins', sans-serif;
+
+/* image glow on click */
+
+.captain-item:active img{
+
+    box-shadow:
+
+    0 0 30px var(--team);
+
 }
 
-.captain-name{
-    font-size:13px;
-    color:white;
-    font-family:'Poppins', sans-serif;
+
+/* text glow on click */
+
+.captain-item:active .team-name{
+
+    text-shadow:
+
+    0 0 20px var(--team);
+
 }
 
-/* Team colors */
-.srh{ background:#ff7a00; }
-.rcb{ background:#d50000; }
-.csk{ background:#ffd600; }
-.mi{ background:#1976d2; }
-.kkr{ background:#7b1fa2; }
-.rr{ background:#ff4081; }
-.dc{ background:#2196f3; }
-.pbks{ background:#b71c1c; }
-.lsg{ background:#00c853; }
-.gt{ background:#00acc1; }
 </style>
 </head>
 
@@ -104,6 +433,7 @@ body{
         <div class="team-name">SRH</div>
         <div class="captain-name">Captain BILLA</div>
     </div>
+    <span>❯❯</span>
 </div>
 
 <div class="captain-item rcb">
@@ -112,6 +442,7 @@ body{
         <div class="team-name">RCB</div>
         <div class="captain-name">Captain PAVAN GAMER</div>
     </div>
+    <span>❯❯</span>
 </div>
 
 <div class="captain-item csk">
@@ -120,6 +451,7 @@ body{
         <div class="team-name">CSK</div>
         <div class="captain-name">Captain ABHI</div>
     </div>
+    <span>❯❯</span>
 </div>
 
 <div class="captain-item mi">
@@ -128,6 +460,7 @@ body{
         <div class="team-name">MI</div>
         <div class="captain-name">Captain HARSHA</div>
     </div>
+    <span>❯❯</span>
 </div>
 
 <div class="captain-item kkr">
@@ -136,6 +469,7 @@ body{
         <div class="team-name">KKR</div>
         <div class="captain-name">Captain Rahul</div>
     </div>
+    <span>❯❯</span>
 </div>
 
 <div class="captain-item rr">
@@ -144,6 +478,7 @@ body{
         <div class="team-name">RR</div>
         <div class="captain-name">Captain Akash</div>
     </div>
+    <span>❯❯</span>
 </div>
 
 <div class="captain-item dc">
@@ -152,6 +487,7 @@ body{
         <div class="team-name">DC</div>
         <div class="captain-name">Captain LOKESH</div>
     </div>
+    <span>❯❯</span>
 </div>
 
 <div class="captain-item pbks">
@@ -160,6 +496,7 @@ body{
         <div class="team-name">PBKS</div>
         <div class="captain-name">Captain Nikhil</div>
     </div>
+    <span>❯❯</span>
 </div>
 
 <div class="captain-item lsg">
@@ -168,6 +505,7 @@ body{
         <div class="team-name">LSG</div>
         <div class="captain-name">Captain Aditya</div>
     </div>
+    <span>❯❯</span>
 </div>
 
 <div class="captain-item gt">
@@ -176,6 +514,7 @@ body{
         <div class="team-name">GT</div>
         <div class="captain-name">Captain Pranav</div>
     </div>
+    <span>❯❯</span>
 </div>
 </div>
 

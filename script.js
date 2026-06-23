@@ -83,11 +83,25 @@ function showSlide(){
 }
 
 function nextSlide(){
-    currentSlide++;
-    if(currentSlide >= spotlightData.length){
-        currentSlide = 0;
+
+    if(currentSlide === spotlightData.length - 1){
+
+        currentSlide = spotlightData.length - 2;
+        showSlide();
+
+        setTimeout(() => {
+
+            currentSlide = 0;
+            showSlide();
+
+        }, 300);
+
+    }else{
+
+        currentSlide++;
+        showSlide();
+
     }
-    showSlide();
 }
 
 function prevSlide(){
@@ -99,6 +113,8 @@ function prevSlide(){
 }
 
 setInterval(nextSlide, 4000);
+
+
 
 let startX = 0;
 
@@ -119,3 +135,25 @@ card.addEventListener('touchend', (e) => {
         prevSlide(); // swipe right
     }
 });
+
+// SHOW WORLD AFTER LOADING
+setTimeout(() => {
+    document.getElementById("intro-screen").style.display = "none";
+    document.getElementById("world-screen").style.display = "block";
+}, 3000);
+
+
+// ENTER BUTTON FUNCTION
+function enterArena() {
+
+    const world = document.getElementById("worldMap");
+
+    // simple zoom effect
+    world.style.transform = "scale(2)";
+    world.style.transition = "2s";
+
+    setTimeout(() => {
+        document.getElementById("world-screen").style.display = "none";
+        document.getElementById("main-home").style.display = "block";
+    }, 2000);
+}

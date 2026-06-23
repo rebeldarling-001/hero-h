@@ -412,7 +412,26 @@ h1{
 .slider-controls button:last-child{
     right:10px;
 }
+.slider {
+  width: 300px;
+  overflow: hidden;
+}
 
+.track {
+  display: flex;
+  transition: transform 1s ease-in-out;
+}
+
+.slide {
+  min-width: 300px;
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 40px;
+  background: lightblue;
+  border: 1px solid black;
+}
 @media(max-width:768px){
 
     .spotlight-card{
